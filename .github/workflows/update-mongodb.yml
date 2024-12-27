@@ -1,0 +1,29 @@
+name: Update MongoDB UUIDs to ObjectIDs
+
+on:
+  workflow_dispatch: # Manuelles Triggern der Pipeline
+
+jobs:
+  update-mongodb:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout Code
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. Installiere Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # oder eine passende Node.js-Version
+
+      # 3. Installiere Abhängigkeiten
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Führe das Update-Skript aus
+      - name: Update MongoDB Documents
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }} # Sicherstellen, dass der Connection String als Secret hinterlegt ist
+        run: node update-mongodb.js
