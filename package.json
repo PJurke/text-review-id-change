@@ -1,0 +1,12 @@
+{
+  "name": "update-mongodb",
+  "version": "1.0.0",
+  "description": "Script to update UUIDs to ObjectIDs in MongoDB",
+  "main": "update-mongodb.js",
+  "scripts": {
+    "start": "node update-mongodb.js"
+  },
+  "dependencies": {
+    "mongodb": "^5.3.0"
+  }
+}
