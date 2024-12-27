@@ -15,7 +15,7 @@ async function updateUUIDsToObjectIDs() {
     const collection = database.collection("documents"); // Ersetze mit deinem Collectionnamen
 
     // Finde das Dokument
-    const document = await collection.findOne({ title: "Ich bin ein Berliner" });
+    const document = await collection.findOne({ title: "Abschiedsrede als Bundeskanzlerin" });
     if (!document) {
       console.log("Dokument nicht gefunden.");
       return;
