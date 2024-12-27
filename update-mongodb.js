@@ -11,8 +11,8 @@ async function updateUUIDsToObjectIDs() {
 
   try {
     await client.connect();
-    const database = client.db("DATABASE_NAME"); // Ersetze mit deinem Datenbanknamen
-    const collection = database.collection("COLLECTION_NAME"); // Ersetze mit deinem Collectionnamen
+    const database = client.db("text-review-db"); // Ersetze mit deinem Datenbanknamen
+    const collection = database.collection("documents"); // Ersetze mit deinem Collectionnamen
 
     // Finde das Dokument
     const document = await collection.findOne({ title: "I Have a Dream Speech" });
